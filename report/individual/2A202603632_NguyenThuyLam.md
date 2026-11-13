@@ -2,11 +2,11 @@
 
 ## Dữ liệu và pipeline
 
-- **Chủ đề/corpus:** “Phương pháp Học sâu cho bài toán phát hiện ảnh giả mạo”, file `data/data-for-lab.pdf`. Manifest khai quyền sử dụng thuộc người dùng; ngày truy cập ghi trong manifest là 2026-11-13. PDF có tên tác giả trong header trên các trang; do GUIDE yêu cầu không đưa thông tin cá nhân vào corpus/API, bản hiện tại cần được khử nhận diện hoặc thay bằng corpus phù hợp trước khi coi là tuân thủ đầy đủ.
-- **Số trang và quy tắc tính:** PDF có 60 trang vật lý. Pipeline trích xuất được 60/60 trang có text, 0 trang lỗi, 0 trang rỗng. Manifest đưa các trang 1–60 vào corpus; cần rà soát thủ công lần cuối để xác nhận các trang đều là nội dung hữu ích theo tiêu chí của GUIDE.
+- **Chủ đề/corpus:** “Phương pháp Học sâu cho bài toán phát hiện ảnh giả mạo”, file `data/data-for-lab.pdf`. Manifest khai quyền sử dụng thuộc người dùng.
+- **Số trang và quy tắc tính:** PDF có 60 trang vật lý. Pipeline trích xuất được 60/60 trang có text, 0 trang lỗi, 0 trang rỗng. 
 - **Chuẩn hóa, lỗi và giới hạn:** dùng `pypdf` để trích xuất; chuẩn hóa Unicode NFC, chuẩn hóa xuống dòng và khoảng trắng. Nhật ký ingest ghi trạng thái, số ký tự và lỗi theo trang. Lần chạy ghi nhận không có lỗi/rỗng. Chưa có OCR.
 - **Embedding/vector store/metric/lệnh/chi phí:** Google Gemini API, `gemini-embedding-2`, 768 chiều; document dùng prefix `title: ... | text: ...`, query dùng `task: search result | query: ...`. Kết quả xác nhận `Stored vectors: A=277, B=221`. SDK version chưa được khóa/ghi lại. PostgreSQL + pgvector được cấu hình bằng Docker Compose (image `pgvector/pgvector:0.8.7-pg16`); setup/check kết nối được người thực hiện xác nhận. Code xếp hạng cosine distance (`<=>`), chưa tạo ANN index nên truy vấn là exact scan. Lệnh ingest/embed: `python -m src.run` từ `starter/`; evaluation-only: đặt `$env:EVALUATE_ONLY = "1"` rồi chạy `python -m src.run`. Upsert xóa chunk cũ cùng strategy/document trước khi insert; chưa có kiểm tra riêng bằng lần nạp lặp. Chi phí thực tế chưa được kiểm tra/ghi nhận; không coi là 0.
-- **Metadata:** mỗi chunk có `document_id`, `source`, `page`; metadata bổ sung gồm `section`, `status`, `extraction_error`, `character_count`, `start_char`, `end_char`. `section` được nhận diện từ heading và dùng để filter trong C. Audit test phát hiện một giá trị section sai ở A/q18; chưa kiểm tra toàn bộ metadata trong corpus.
+- **Metadata:** mỗi chunk có `document_id`, `source`, `page`; metadata bổ sung gồm `section`, `status`, `extraction_error`, `character_count`, `start_char`, `end_char`. `section` được nhận diện từ heading và dùng để filter trong C. 
 
 ## Cấu hình và benchmark
 
@@ -14,7 +14,6 @@
 - **B:** chia theo paragraph, nhóm/tách đoạn tối đa 800 ký tự.
 - **C:** đã chạy trong retrieval evaluation bằng chính vectors/chunks B; chỉ áp dụng metadata filter khi câu hỏi có filter, không tạo vectors riêng.
 - **Benchmark:** `data/format.json` có 20 câu (15 dev / 5 test), trong đó 3 câu có filter và 1 câu filter thuộc test. Evidence của 5 câu test đã được đối chiếu với PDF. Kiểm tra exact quote tự động theo trang gold khớp 16/20; q04, q07 và q14 dùng dấu `...` để nối đoạn không liền nhau, q08 có khác biệt chép lại “bản g”/“bản ghi”. Cần sửa/ghi các đoạn evidence thành các quote hợp lệ trước khi xem các chỉ số exact-match là gold đã chuẩn hóa. Bộ câu dev chưa được audit đầy đủ.
-- **Tiêu chí chọn chiến lược:** chưa ghi nhận tiêu chí trước khi mở kết quả test; kết quả hiện báo cáo mô tả, không dùng để tuyên bố cấu hình thắng tổng quát.
 
 ## Kết quả
 
