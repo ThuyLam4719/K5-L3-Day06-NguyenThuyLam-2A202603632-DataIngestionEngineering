@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed_size,500,50,"document_id;source;page;section",none,"Google Gemini API gemini-embedding-2 (768d)",not recorded before evaluation,5/15 (33.3%),5/15 (33.3%),2/5 (40%),2/5 (40%),277 chunks; sample API embedding latency 3 chunks (pages 30/40/60): mean 0.623s, range 0.458-0.848s; paced wait excluded; full ingest time and account cost unavailable
+B,paragraph,800,0,"document_id;source;page;section",none,"Google Gemini API gemini-embedding-2 (768d)",not recorded before evaluation,8/15 (53.3%),9/15 (60%),1/5 (20%),3/5 (60%),221 chunks; sample API embedding latency 3 chunks (pages 30/40/60): mean 0.455s, range 0.450-0.462s; paced wait excluded; full ingest time and account cost unavailable
+C,paragraph,800,0,"document_id;source;page;section","filter by metadata.section when question supplies filter; otherwise none","Google Gemini API gemini-embedding-2 (768d)",not recorded before evaluation,7/15 (46.7%),8/15 (53.3%),1/5 (20%),3/5 (60%),reuses B chunks and vectors; no separate embedding calls; q18 returned 2 filtered hits and both obeyed section=3.3.2; time and account cost unavailable

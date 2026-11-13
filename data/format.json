@@ -1,0 +1,228 @@
+[
+    {
+        "id": "q01",
+        "split": "dev",
+        "type": "direct",
+        "question": "Trong vụ việc được nêu về Veerender Jubbal, những vật thể/chi tiết nào đã bị chỉnh sửa trong ảnh gốc?",
+        "expected_answer": "Chiếc iPad bị biến thành cuốn kinh Quran và người trong ảnh bị thêm áo gắn bom tự sát.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "2",
+        "evidence_quote": "Bức ảnh gốc là của Veerender Jubbal, một nhà văn người Canada, đang cầm chiếc iPad để chụp ảnh tự sướng trước gương trong nhà tắm. Những kẻ ác ý đã dùng Photoshop biến chiếc iPad thành kinh Quran và vẽ thêm chiếc áo gắn bom.",
+        "filter": null
+    },
+    {
+        "id": "q02",
+        "split": "dev",
+        "type": "paraphrase",
+        "question": "SIFT có thể xử lý tốt những biến đổi hình học nào khi phát hiện Copy-Move, và gặp khó khăn trong trường hợp nào?",
+        "expected_answer": "SIFT mạnh trước phép xoay và thu phóng, nhưng khó phát hiện khi vùng bị sao chép quá đồng nhất và trơn nhẵn.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "3",
+        "evidence_quote": "Nghiên cứu chứng minh rằng SIFT vô cùng mạnh mẽ trước các phép biến đổi xoay và thu phóng hình học, tuy nhiên sẽ gặp khó khăn khi vùng bị cắt ghép quá đồng nhất và trơn nhẵn.",
+        "filter": null
+    },
+    {
+        "id": "q03",
+        "split": "dev",
+        "type": "direct",
+        "question": "Nghiên cứu dự định so sánh những kiến trúc CNN nào?",
+        "expected_answer": "Custom CNN, VGG19, ResNet50, EfficientNet-B0 và MobileNetV2 kết hợp Transfer Learning.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "7",
+        "evidence_quote": "đề tài lựa chọn triển khai năm kiến trúc Mạng nơ -ron tích chập bao gồm: mô hình Custom CNN tự thiết kế, VGG19, ResNet50, EfficientNet -B0 và MobileNetV2 kết hợp Transfer Learning.",
+        "filter": null
+    },
+    {
+        "id": "q04",
+        "split": "dev",
+        "type": "conditional",
+        "question": "Theo giới hạn đề tài, vì sao kết quả trên bộ dữ liệu chuẩn có thể suy giảm trong thực tế, và loại ảnh giả mạo mới nào bị loại khỏi phạm vi?",
+        "expected_answer": "Dữ liệu mang tính phòng thí nghiệm nên có thể không đại diện cho ảnh thực tế, như ảnh bị nén nhiều lần trên mạng xã hội hoặc ảnh chụp màn hình; Deepfake và ảnh tạo sinh bởi AI cũng nằm ngoài phạm vi.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "8",
+        "evidence_quote": "Các mô hình có thể hoạt động tốt trên tập dữ liệu chuẩn nhưng hiệu năng có thể suy giảm khi đối mặt với các điều kiện phức tạp trong thực tế như: ảnh bị nén nhiều lần trên mạng xã hội, ảnh chụp màn hình... Cuối cùng, các nguồn lực tính toán sẵn có cho nghiên cứu này đặt ra một hạn chế về độ phức tạp và sự đa dạng của các thí nghiệm có thể được thực hiện, cũng như giới hạn phạm vi nghiên cứu không bao gồm các loại hình ảnh giả mạo mới nổi như Deepfake hay ảnh được tạo sinh bởi AI.",
+        "filter": null
+    },
+    {
+        "id": "q05",
+        "split": "dev",
+        "type": "metadata_filter",
+        "question": "Chỉ xét mục 2.2.2 về Splicing: khác với Copy-Move, ảnh ghép trong Splicing có nguồn gốc từ đâu, và điều gì tạo nên sai khác thị giác?",
+        "expected_answer": "Các vùng ghép đến từ những ảnh gốc khác nhau, nên có thể khác về nhiệt độ màu, điều kiện chiếu sáng và nhiễu cảm biến.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "10",
+        "evidence_quote": "Khác với Copy-Move, hình ảnh dùng để cắt ghép trong Splicing có nguồn gốc từ các ảnh gốc khác nhau, do đó chúng sẽ mang những thuộc tính thị giác khác biệt rõ rệt về nhiệt độ màu, điều kiện chiếu sáng (hướng bóng đổ, độ sáng) và các mức nhiễu cảm biến.",
+        "filter": {
+            "section": "2.2.2"
+        }
+    },
+    {
+        "id": "q06",
+        "split": "dev",
+        "type": "direct",
+        "question": "Khi cần kiểm tra một ảnh theo phương pháp chủ động, hệ thống làm gì với thông tin xác thực?",
+        "expected_answer": "Hệ thống trích xuất thông tin đã nhúng và so sánh nó với dữ liệu gốc để xác định ảnh có bị thay đổi không.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "12",
+        "evidence_quote": "Khi cần kiểm tra, hệ thống sẽ trích xuất và so sánh thông tin này với dữ liệu gốc để xác định xem ảnh có bị thay đổi hay không.",
+        "filter": null
+    },
+    {
+        "id": "q07",
+        "split": "dev",
+        "type": "conditional",
+        "question": "Khi không có ảnh gốc hay thông tin nhúng sẵn, phương pháp thụ động dựa vào đâu; hạn chế được nêu là gì?",
+        "expected_answer": "Nó phân tích các đặc trưng nội tại như ánh sáng, nhiễu cảm biến, dấu vết JPEG, texture và thống kê pixel; độ chính xác phụ thuộc kỹ thuật và có thể bị ảnh hưởng bởi nén hoặc làm mờ.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "13",
+        "evidence_quote": "Phương pháp thụ động hay còn gọi là Blind Forensics không yêu cầu bất kỳ thông tin nhúng sẵn hay kiến thức nào về hình ảnh gốc. Thay vào đó, phương pháp này dựa trên việc phân tích các đặc trưng nội tại của hình ảnh nhằm phát hiện dấu vết bất thường do quá trình chỉnh sửa gây ra. ... Tuy nhiên, độ chính xác phụ thuộc nhiều vào kỹ thuật sử dụng và có thể bị ảnh hưởng bởi các phép xử lý hậu kỳ như nén hoặc làm mờ.",
+        "filter": null
+    },
+    {
+        "id": "q08",
+        "split": "dev",
+        "type": "direct",
+        "question": "Hãy nêu thứ tự các bước chính trong quy trình nén JPEG được mô tả.",
+        "expected_answer": "Chuyển RGB sang YCbCr, giảm mẫu Cb/Cr, biến đổi DCT, lượng tử hóa, rồi Run Length và mã hóa Entropy.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "14",
+        "evidence_quote": "Quy trình nén ảnh gồm 5 bước diễn ra như sau: Đầu tiên là chuyển đổi ảnh cần nén từ hệ màu RGB sang YcbCr, sau đó tiến hành giảm mẫu ở hai kênh Cb và Cr. Sau khi giảm mẫu, thực hiện biến đổi Cosin rời rạc trên cả ba kênh Y, Cb và Cr. Sau bước này, ta thu được bảng Hệ số DCT. Sau khi có bản g hệ số này, tiến hành lượng tử hóa bảng hệ số bằng một bảng lượng tử được có sẵn. Cuối cùng, Run Length và mã hóa Entropy để lưu kết quả vào tệp ảnh JPEG.",
+        "filter": null
+    },
+    {
+        "id": "q09",
+        "split": "dev",
+        "type": "paraphrase",
+        "question": "Trong không gian màu YCbCr, mỗi kênh biểu diễn loại thông tin nào?",
+        "expected_answer": "Y là độ sáng; Cb là sắc xanh dương; Cr là sắc đỏ.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "14",
+        "evidence_quote": "Y (Luminance – Độ sáng): Kênh này chứa thông tin về độ sáng tối của bức ảnh. - Cb (Blue Chrominance – Độ sắc xanh dương): Kênh chứa thông tin về màu xanh dương. - Cr (Red Chrominance – Độ sắc đỏ): Kênh chứa thông tin về màu đỏ.",
+        "filter": null
+    },
+    {
+        "id": "q10",
+        "split": "dev",
+        "type": "direct",
+        "question": "Trong phần DCT, ảnh được chia thành các block có kích thước bao nhiêu?",
+        "expected_answer": "Mỗi block có kích thước 8×8 pixel.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "16",
+        "evidence_quote": "Hình ảnh được chia nhỏ thành các khối (blocks) có kích thước 8𝑥8.",
+        "filter": null
+    },
+    {
+        "id": "q11",
+        "split": "dev",
+        "type": "direct",
+        "question": "Bảng lượng tử JPEG được lưu ở đâu trong tệp ảnh?",
+        "expected_answer": "Bảng lượng tử được lưu trong phần Header của tệp JPEG.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "21",
+        "evidence_quote": "Trong tệp ảnh JPEG, Bảng lượng tử hóa được lưu ở phần Header của tệp.",
+        "filter": null
+    },
+    {
+        "id": "q12",
+        "split": "dev",
+        "type": "metadata_filter",
+        "question": "Trong mục 2.4.5 về lượng tử hóa, vì sao bước này làm nén JPEG trở thành nén có tổn hao?",
+        "expected_answer": "Các hệ số DCT bị chia cho hệ số lượng tử rồi làm tròn thành số nguyên, làm mất vĩnh viễn phần thập phân và không thể khôi phục giá trị ban đầu.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "23",
+        "evidence_quote": "Việc lượng tử hóa các hệ số DCT và thực hiện phép làm tròn đến số nguyên gần nhất dẫn đến sự triệt tiêu vĩnh viễn các thành phần thập phân, khiến đây trở thành một quá trình biến đổi không lấy lại được giá trị ban đầu. Đây chính là giai đoạn cốt lõi của giải thuật nén ảnh có tổn hao (lossy compression)",
+        "filter": {
+            "section": "2.4.5"
+        }
+    },
+    {
+        "id": "q13",
+        "split": "dev",
+        "type": "conditional",
+        "question": "Khi chỉnh sửa một ảnh đã nén rồi lưu lại lần nữa, chuyện gì xảy ra với vùng nền gốc theo mô tả?",
+        "expected_answer": "Vùng nền gốc bị nén lần đầu khi chụp và tiếp tục bị nén lần thứ hai khi ảnh đã chỉnh sửa được lưu.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "25",
+        "evidence_quote": "Đối với vùng nền gốc: Vùng ảnh này vốn dĩ đã bị nén một lần ngay từ khi bức ảnh được chụp bởi thiết bị camera. Khi kẻ gian thực hiện xong thao tác chỉnh sửa và nhấn lưu ảnh lại, phần mềm sẽ nén toàn bộ bức ảnh lại. Lúc này, vùng nền gốc tiếp tục bị nén thêm lần thứ hai, trải qua quá trình nén hai lần (Double Compression).",
+        "filter": null
+    },
+    {
+        "id": "q14",
+        "split": "dev",
+        "type": "direct",
+        "question": "ELA so sánh những gì, và error map giúp người dùng quan sát điều gì?",
+        "expected_answer": "ELA so sánh pixel của ảnh ban đầu với ảnh sau tái nén; error map làm nổi bật các vùng có sai khác lớn, có thể là vùng đã bị chỉnh sửa.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "26",
+        "evidence_quote": "Ý tưởng cốt lõi của ELA là đánh giá mức độ sai khác của các điểm ảnh giữa ảnh ban đầu và ảnh sau khi được tái nén. ... ELA tận dụng đặc điểm này bằng cách tạo ra một ảnh biểu diễn mức sai khác (Error map), trong đó các vùng có sai khác lớn sẽ được làm nổi bật.",
+        "filter": null
+    },
+    {
+        "id": "q15",
+        "split": "dev",
+        "type": "conditional",
+        "question": "Kết quả ELA có tự nó khẳng định chính xác vùng nào là giả mạo không? Nêu giới hạn được tài liệu ghi rõ.",
+        "expected_answer": "Không. ELA chỉ biểu diễn mức độ sai khác; để kết luận chính xác cần kết hợp phương pháp khác hoặc mô hình học sâu.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "27",
+        "evidence_quote": "ELA không trực tiếp xác định vùng giả mạo, mà chỉ cung cấp thông tin về mức độ sai khác. Do đó, việc phân tích kết quả ELA thường cần kết hợp với các phương pháp khác hoặc sử dụng các mô hình học sâu để đưa ra kết luận chính xác hơn.",
+        "filter": null
+    },
+    {
+        "id": "q16",
+        "split": "test",
+        "type": "paraphrase",
+        "question": "Vì sao nghiên cứu dùng ảnh ELA làm đầu vào cho CNN thay vì chỉ dựa vào ngữ nghĩa của ảnh?",
+        "expected_answer": "Ảnh ELA giúp CNN tập trung vào dấu vết nén và sự không nhất quán thay vì nội dung ngữ nghĩa, qua đó hỗ trợ phát hiện ảnh giả mạo.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "28",
+        "evidence_quote": "Trong nghiên cứu này, tôi sử dụng ảnh sai khác chất lượng nén làm đầu vào (input) cho các mô hình CNN. Việc này giúp mô hình tập trung vào các dấu vết nén thay vì nội dung ngữ nghĩa của ảnh, từ đó nâng cao khả năng phát hiện ảnh giả mạo.",
+        "filter": null
+    },
+    {
+        "id": "q17",
+        "split": "test",
+        "type": "conditional",
+        "question": "Trong mục ưu điểm của Transfer Learning, nếu dữ liệu huấn luyện ít thì phương pháp này có ích ra sao?",
+        "expected_answer": "Nó hữu ích vì giảm đáng kể nhu cầu về dữ liệu huấn luyện; đồng thời có thể tái sử dụng đặc trưng đã học để tiết kiệm thời gian và tài nguyên.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "35",
+        "evidence_quote": "Hữu ích với lượng dữ liệu nhỏ: Trong trường hợp gặp khó khăn khi thu thập dữ liệu lớn, Học chuyển giao trở thành giải pháp lý tưởng. Phương pháp này giảm đáng kể nhu cầu về dữ liệu huấn luyện.",
+        "filter": null
+    },
+    {
+        "id": "q18",
+        "split": "test",
+        "type": "metadata_filter",
+        "question": "Chỉ xét mục 3.3.2 về phân chia tập dữ liệu: tỉ lệ Train, Validation và Test được đặt như thế nào?",
+        "expected_answer": "Train 70%, Validation 15% và Test 15%.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "46",
+        "evidence_quote": "tiến hành phân chia tập dữ liệu thành 3 tập riêng biệt với tỉ lệ tập Train 70% cho việc cập nhật trọng số trong quá trình huấn luyện, Validatiion 15% để theo dõi quá trình huấn luyện, điều chỉnh siêu tham số và chọn epoch tốt nhất, tập Test 15% dùng để đánh giá hiệu năng của mô hình sau khi hoàn thành huấn luyện.",
+        "filter": {
+            "section": "3.3.2"
+        }
+    },
+    {
+        "id": "q19",
+        "split": "test",
+        "type": "conditional",
+        "question": "Để tránh data leakage khi augmentation, nghiên cứu áp dụng augmentation ở tập nào và giữ nguyên những tập nào?",
+        "expected_answer": "Chỉ augmentation tập Train; Validation và Test không được augmentation.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "48",
+        "evidence_quote": "Chỉ tăng cường trên tập Train để tránh hiện tượng rò rỉ dữ liệu (data leakage), đồng thời để mô hình học được đa dạng hơn các biến thể của kĩ thuật chỉnh sửa, tập Validation và Test không được tăng cường.",
+        "filter": null
+    },
+    {
+        "id": "q20",
+        "split": "test",
+        "type": "direct",
+        "question": "Vì sao nghiên cứu chọn AUC làm chỉ số đánh giá chính thay vì chỉ dựa vào Accuracy?",
+        "expected_answer": "Vì CASIA v2.0 mất cân bằng lớp; Accuracy có thể bị lệch và chỉ xét một ngưỡng, còn AUC đánh giá khả năng phân tách qua nhiều ngưỡng.",
+        "gold_source_id": "data-for-lab.pdf",
+        "gold_page": "60",
+        "evidence_quote": "AUC được lựa chọn làm chỉ số đánh giá chính vì tập dữ liệu đầu vào CASIA v2.0 có sự mất cân bằng giữa các lớp (7491 ảnh nguyên bản so với 5123 ảnh bị chỉnh sửa). Trong khi các chỉ số như Accuracy dễ bị sai lệch do sự mất cân bằng này và phụ thuộc vào một ngưỡng phân loại duy nhất thì AUC đánh giá hiệu năng của mô hình trên mọi ngưỡng phân loại có thể có.",
+        "filter": null
+    }
+]
